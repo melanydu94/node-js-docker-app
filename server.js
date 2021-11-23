@@ -1,9 +1,8 @@
 const express = require('express')
+const mysql = require('mysql');
 
 const port = 8080
 const host = '0.0.0.0';
-
-const mysql = require('mysql');
 
 const mysqlConfig = {
     host: "mysql_server",
