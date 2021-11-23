@@ -1,14 +1,19 @@
 const express = require('express')
+
+const port = 8080
+const host = '0.0.0.0';
+
 const mysql = require('mysql2');
 
 const mysqlConfig = {
-  host: "mysql_server",
-  user: "melany",
-  password: "secret",
-  database: "mysql-db"
-}
-
+    host: "mysql_server",
+    user: "melany",
+    password: "secret",
+    database: "mysql-db"
+  }
+  
 let con = null
+
 const app = express()
 
 app.get('/', function (req, res) {
@@ -40,5 +45,5 @@ app.get('/create-table', function (req, res) {
   });
 })
 
-app.listen(8080)
-console.log("Listening on port 8080")
+app.listen(host, port);
+console.log(`Running on http://${host}:${port}`);
